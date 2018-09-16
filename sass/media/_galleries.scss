@@ -1,0 +1,84 @@
+.gallery {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -1px;
+	margin-right: -1px;
+	margin-bottom: 1.5rem;
+	min-width: 100%;
+}
+
+.gallery-item {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	position: relative;
+	min-height: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	margin: 0 0 2px;
+	width: 100%;
+
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			width: map-get( $columns, $i );
+		}
+	}
+
+	&:hover .gallery-caption,
+	&:focus .gallery-caption{
+		transform: scale(1);
+	}
+
+	a {
+		display: block;
+		&:hover,
+		&:focus {
+			opacity: .5;
+		}
+	}
+
+	img {
+		width: 100%;
+		display: block;
+		vertical-align: middle;
+	}
+
+}
+
+.gallery-caption {
+    background-color: $color__text-main;
+    color: $color__white;
+    @include font-size(0.875);
+    position: absolute;
+    padding: 1rem;
+    z-index: 5;
+    bottom: calc( 100% + 16px );
+    left: 50%;
+    width: 240px;
+    margin-left: -120px;
+    transform: scale(0);
+    transition: all .25s ease-in-out;
+    box-shadow: 0 -2px 4px $color__alpha-dark;
+    &:after {
+		content: " ";
+		border-style: solid;
+		border-width: 0 9px 9px 9px;
+		border-color: transparent transparent $color__text-main transparent;
+		height: 0;
+		position: absolute;
+		left: 50%;
+		bottom: -8px;
+		width: 0;
+		margin-left: -9px;
+		transform: rotate(180deg);
+    }
+}
+
+.wp-block-gallery {
+	padding: 0;
+	margin-left: -8px;
+	margin-right: -8px;
+}
