@@ -33,7 +33,7 @@ WP Term Images plugin is recommended to display featured image inside category p
 You can easily install and use Easy Google Fonts plugin.
 ###
 ## Changelog ##
-### 1.0.4 - September 2, 2018 ###
+### 1.0.5 - September 17, 2018 ###
 * Updated Theme credits
 * Fixed RTL style load
 * Added Gutenberg support
