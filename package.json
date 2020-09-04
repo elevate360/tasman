@@ -34,6 +34,6 @@
     "grunt-text-replace": "^0.4.0",
     "grunt-wp-css": "^0.2.1",
     "grunt-wp-readme-to-markdown": "^2.0.1",
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.13.1"
   }
 }
