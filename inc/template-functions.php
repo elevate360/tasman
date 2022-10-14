@@ -175,7 +175,7 @@ function tasman_additional_menu( $items, $args ){
 	if ( $args->theme_location == 'menu-1' ) {
 		$items .= '
 			<li class="menu-item search-menu">
-				<form role="search" method="get" class="search-form" action="'. esc_url( home_url() ) .'">
+				<form '.get_search_form().' method="get" class="search-form" action="'. esc_url( home_url() ) .'">
 					<label>
 						'. tasman_get_svg( array( 'icon' => 'search' ) ) .'
 						<span class="screen-reader-text">'. __( 'Search for:', 'tasman' ) .'</span>
